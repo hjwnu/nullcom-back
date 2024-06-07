@@ -12,7 +12,11 @@ java {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
+bootJar.enabled = true
 
+jar {
+    enabled = false
+}
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -24,9 +28,15 @@ repositories {
 }
 
 dependencies {
+    implementation project(":nullcom-core")
+    implementation project(":nullcom-framework")
+    implementation project(":nullcom-system")
+    implementation project(":nullcom-nullog")
+    implementation project(":nullcom-pay")
+
     implementation 'org.springframework.boot:spring-boot-starter-amqp'
     implementation 'org.springframework.boot:spring-boot-starter-batch'
-    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
@@ -39,8 +49,12 @@ dependencies {
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'org.springframework.session:spring-session-data-redis'
     implementation 'org.springframework.session:spring-session-jdbc'
+    implementation 'io.netty:netty-resolver-dns-native-macos:4.1.86.Final:osx-aarch_64'
+
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
+
+
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'io.r2dbc:r2dbc-h2'
     runtimeOnly 'org.postgresql:postgresql'

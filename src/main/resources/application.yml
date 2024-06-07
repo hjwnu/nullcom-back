@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: 'nullcom-back'
+
+
+server:
+    port: 6060
+    tomcat:
+        threads:
+            max: 5
+            min-spare: 3
+        accept-count: 10

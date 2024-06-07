@@ -1,1 +1,16 @@
 rootProject.name = 'nullcom-back'
+
+include(":nullcom-core")
+project(":nullcom-core").projectDir = file("../nullcom-core")
+
+include(":nullcom-framework")
+project(":nullcom-framework").projectDir = file("../nullcom-framework")
+
+include(":nullcom-system")
+project(":nullcom-system").projectDir = file("../nullcom-system")
+
+include(":nullcom-nullog")
+project(":nullcom-nullog").projectDir = file("../nullcom-nullog")
+
+include(":nullcom-pay")
+project(":nullcom-pay").projectDir = file("../nullcom-pay")
