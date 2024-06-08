@@ -10,19 +10,22 @@ services:
   postgres:
     image: 'postgres:latest'
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      - POSTGRES_DB=nullcom
+      - POSTGRES_PASSWORD=nullcom123$
+      - POSTGRES_USER=root
     ports:
-      - '5432'
+      - '5432:5432'
+    container_name: postgres
   rabbitmq:
     image: 'rabbitmq:latest'
     environment:
-      - 'RABBITMQ_DEFAULT_PASS=secret'
-      - 'RABBITMQ_DEFAULT_USER=myuser'
+      - RABBITMQ_DEFAULT_PASS=nullcom123$
+      - RABBITMQ_DEFAULT_USER=nullcom
     ports:
-      - '5672'
+      - '5672:5672'
+    container_name: rabbitMQ
   redis:
     image: 'redis:latest'
     ports:
-      - '6379'
+      - '6379:6379'
+    container_name: redis

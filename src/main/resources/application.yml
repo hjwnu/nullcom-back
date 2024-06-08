@@ -1,7 +1,13 @@
 spring:
     application:
         name: 'nullcom-back'
-
+    datasource:
+        hikari:
+            driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/nullcom
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        hibernate.ddl-auto: update
 
 server:
     port: 6060
