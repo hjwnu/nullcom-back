@@ -29,7 +29,6 @@ repositories {
 
 dependencies {
     implementation project(":nullcom-core")
-    implementation project(":nullcom-framework")
     implementation project(":nullcom-system")
     implementation project(":nullcom-nullog")
     implementation project(":nullcom-pay")

@@ -3,8 +3,6 @@ rootProject.name = 'nullcom-back'
 include(":nullcom-core")
 project(":nullcom-core").projectDir = file("../nullcom-core")
 
-include(":nullcom-framework")
-project(":nullcom-framework").projectDir = file("../nullcom-framework")
 
 include(":nullcom-system")
 project(":nullcom-system").projectDir = file("../nullcom-system")
